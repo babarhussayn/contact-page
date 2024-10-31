@@ -35,20 +35,9 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-8 container mx-auto">
-        <div className="w-full">
-          <div className="flex justify-center items-center flex-col gap-4">
-            <h3 className="text-3xl font-Playfair-Display">Contact Us</h3>
-            <span className="font-Playfair-Display md:w-[410px] w-[250px] text-lg">
-              We use an agile approach to test assumptions and connect with the
-              needs of your audience early and often.
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-between items-center flex-col md:flex-row mt-16 mb-10 w-full container mx-auto">
-        <div className=" w-full">
-          <div className="m-8  md:w-full">
+      <div className="flex justify-center items-center bg-white md:flex-row mt-16 mb-10 w-full container mx-auto">
+        <div className=" w-[1200px]">
+          <div className="m-8  md:w-full bg-white">
             <form onSubmit={handleSend}>
               <div className="flex flex-col md:flex-row gap-4 m-4  w-full">
                 <div className="flex flex-col md:w-full">
