@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 interface Form {
   name: string;
@@ -35,8 +38,8 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center bg-white md:flex-row mt-16 mb-10 w-full container mx-auto">
-        <div className=" w-[1200px]">
+      <div className="flex justify-center items-center bg-white md:flex-row mt-16 mb-10 w-[800px] container mx-auto">
+        <div className=" w-[600px]">
           <div className="m-8  md:w-full bg-white">
             <form onSubmit={handleSend}>
               <div className="flex flex-col md:flex-row gap-4 m-4  w-full">
@@ -80,41 +83,56 @@ const HomePage = () => {
                     className="w-full"
                   />
                 </div>
-                <div className="flex flex-col w-full">
-                  <Label className="m-2 font-Playfair-Display">
-                    Phone Number
-                  </Label>
-                  <Input
-                    placeholder="Phone"
-                    name="phone"
-                    type="number"
-                    className="w-full"
-                    required
-                    value={formValues.phone}
-                    onChange={handleChange}
-                  />
+              </div>
+              <div className="flex justify-between items-center gap-12 m-4 w-full">
+                <div className="w-[350px] h-[35px] border rounded-lg flex justify-start gap-4 items-center ">
+                  <RadioGroup defaultValue="option-one">
+                    <RadioGroupItem value="option-three" id="option-one" />
+                  </RadioGroup>
+                  <div>
+                    <h4>General Enquiry</h4>
+                  </div>
+                </div>
+                <div className="w-[310px] h-[35px] border rounded-lg flex justify-start gap-4 items-center ">
+                  <RadioGroup defaultValue="option-one">
+                    <RadioGroupItem value="option-two" id="option-two" />
+                  </RadioGroup>
+                  <div>
+                    <h4>General Enquiry</h4>
+                  </div>
                 </div>
               </div>
 
               <div className="flex flex-col m-4 w-full">
                 <Label className="m-2 font-Playfair-Display">Message</Label>
-                <Input
+                <Textarea
                   placeholder="Message"
                   name="message"
                   required
                   className="w-full"
-                  value={formValues.message}
-                  onChange={handleChange}
                 />
               </div>
 
-              <div className="flex m-4">
+              <div className="items-top flex space-x-2">
+                <Checkbox id="terms1" />
+                <div className="grid gap-1.5 leading-none">
+                  <label
+                    htmlFor="terms1"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    I consent to being contacted by the team *
+                  </label>
+                </div>
+              </div>
+
+              <div className="flex m-4 w-full">
                 <Button
-                  disabled={status === "loading"}
                   variant={"destructive"}
-                  className="px-8"
+                  className="bg-[#1d6145] w-full hover:bg-[#4a6e5f]"
                   type="submit"
-                ></Button>
+                >
+                  Submit
+                </Button>
               </div>
             </form>
           </div>
