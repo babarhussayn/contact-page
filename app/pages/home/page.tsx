@@ -38,14 +38,17 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center bg-white md:flex-row mt-16 mb-10 w-[800px] container mx-auto">
-        <div className=" w-[600px]">
+      <div className="flex justify-center items-center  bg-white md:flex-row mt-16 mb-10 w-[700px] container mx-auto rounded-lg p-4">
+        <div className=" w-[600px] flex justify-center">
           <div className="m-8  md:w-full bg-white">
+            <div>
+              <h4>Contact Us</h4>
+            </div>
             <form onSubmit={handleSend}>
               <div className="flex flex-col md:flex-row gap-4 m-4  w-full">
                 <div className="flex flex-col md:w-full">
                   <Label className="m-2 font-Playfair-Display">
-                    First Name
+                    First Name *
                   </Label>
                   <Input
                     placeholder="Name"
@@ -58,7 +61,9 @@ const HomePage = () => {
                 </div>
 
                 <div className="flex flex-col w-full">
-                  <Label className="m-2 font-Playfair-Display">Last Name</Label>
+                  <Label className="m-2 font-Playfair-Display">
+                    Last Name *
+                  </Label>
                   <Input
                     placeholder="Last Name"
                     name="lname"
@@ -72,7 +77,9 @@ const HomePage = () => {
 
               <div className="flex flex-col md:flex-row gap-2 m-4 w-full">
                 <div className="flex flex-col w-full">
-                  <Label className="m-2 font-Playfair-Display">Email</Label>
+                  <Label className="m-2 font-Playfair-Display">
+                    Email Address *
+                  </Label>
                   <Input
                     required
                     placeholder="Email"
@@ -104,7 +111,7 @@ const HomePage = () => {
               </div>
 
               <div className="flex flex-col m-4 w-full">
-                <Label className="m-2 font-Playfair-Display">Message</Label>
+                <Label className="m-2 font-Playfair-Display">Message *</Label>
                 <Textarea
                   placeholder="Message"
                   name="message"
